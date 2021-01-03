@@ -13,7 +13,7 @@ import {
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const My_Header = ({head_name}) => {
+const My_Header = (props) => {
   const main_header = () => {
     return (
       <Header style={{backgroundColor: '#ef394e'}}>
@@ -29,18 +29,24 @@ const My_Header = ({head_name}) => {
         </Left>
         <Right>
           <Text style={{color: '#fff', fontSize: 22, fontWeight: 'bold'}}>
-            digikala
+            {props.head_page_name ? props.head_page_name : 'digikala'}
           </Text>
-          <Icon name="menu" size={22} color="#fff" />
+
+          <Ripple>
+            <Icon
+              name={props.head_page_icon ? 'arrow-forward' : 'menu'}
+              size={22}
+              color="#fff"
+            />
+          </Ripple>
         </Right>
       </Header>
     );
   };
 
-  switch (head_name) {
+  switch (props.head_name) {
     case 'Main':
       return main_header();
-      break;
   }
 };
 
