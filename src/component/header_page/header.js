@@ -34,7 +34,7 @@ const My_Header = (props) => {
 
           <Ripple>
             <Icon
-              name={props.head_page_icon ? 'arrow-forward' : 'menu'}
+              name={props.head_page_icon ? props.head_page_icon : 'menu'}
               size={22}
               color="#fff"
             />

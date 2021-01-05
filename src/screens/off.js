@@ -5,7 +5,7 @@ import My_Header from '../component/header_page/header';
 let props = {
   head_name: 'Main',
   head_page_name: 'off',
-  head_page_icon: 'off',
+  head_page_icon: 'arrow-forward',
 };
 const Off = () => {
   return (

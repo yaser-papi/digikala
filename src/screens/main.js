@@ -9,10 +9,14 @@ import KalaOne from '../component/main_page/KalaOne';
 import KalaTwo from '../component/main_page/KalaTwo';
 import Amazing from '../component/main_page/amazing';
 
+let props = {
+  head_name: 'Main',
+};
+
 const Main = () => {
   return (
     <ScrollView>
-      <My_Header head_name={'Main'} />
+      <My_Header {...props} />
       <Slider />
       <Category />
       <Amazing />
