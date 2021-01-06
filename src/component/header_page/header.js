@@ -12,6 +12,7 @@ import {
 } from 'native-base';
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {TextInput} from 'react-native-gesture-handler';
 
 const My_Header = (props) => {
   const main_header = () => {
@@ -36,9 +37,76 @@ const My_Header = (props) => {
             <Icon
               name={props.head_page_icon ? props.head_page_icon : 'menu'}
               size={22}
+              color={
+                props.head_page_icon_color ? props.head_page_icon_color : '#fff'
+              }
+            />
+          </Ripple>
+        </Right>
+      </Header>
+    );
+  };
+  const Shop_cart_header = () => {
+    return (
+      <Header style={{backgroundColor: '#ef394e'}}>
+        <Left>
+          <View style={{flexDirection: 'row'}}>
+            <Ripple>
+              <Icon name="shopping-cart" size={22} color="#fff" />
+            </Ripple>
+          </View>
+        </Left>
+        <Right>
+          <Text style={{color: '#ddd', fontSize: 20}}> سبد خرید شما </Text>
+
+          <Ripple>
+            <Icon
+              name={props.head_page_icon ? props.head_page_icon : 'close'}
+              size={20}
+              color="#555"
+            />
+          </Ripple>
+        </Right>
+      </Header>
+    );
+  };
+  const Forget_header = () => {
+    return (
+      <Header style={{backgroundColor: '#ef394e'}}>
+        <Right>
+          <Text style={{color: '#ddd', fontSize: 20}}> تایید شماره تلفن </Text>
+
+          <Ripple>
+            <Icon
+              name={props.head_page_icon ? props.head_page_icon : 'close'}
+              size={20}
               color="#fff"
             />
           </Ripple>
+        </Right>
+      </Header>
+    );
+  };
+  const Search_header = () => {
+    return (
+      <Header style={{backgroundColor: '#fff'}}>
+        <Left>
+          <View style={{flexDirection: 'row'}}>
+            <Ripple>
+              <Icon name="qr-code" size={22} color="#555" />
+            </Ripple>
+            <Ripple>
+              <Icon name="mic" size={22} color="#555" />
+            </Ripple>
+          </View>
+        </Left>
+        <Right>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <TextInput placeholder="جستجو در دیجی کالا..." />
+            <Ripple>
+              <Icon name="arrow-forward" size={22} color="#555" />
+            </Ripple>
+          </View>
         </Right>
       </Header>
     );
@@ -47,6 +115,12 @@ const My_Header = (props) => {
   switch (props.head_name) {
     case 'Main':
       return main_header();
+    case 'Shop':
+      return Shop_cart_header();
+    case 'Forget':
+      return Forget_header();
+    case 'Search':
+      return Search_header();
   }
 };
 

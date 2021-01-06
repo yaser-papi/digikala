@@ -24,7 +24,7 @@ const App = createStackNavigator(
     Search_sc: Search_sc,
     CategoryTab_sc: CategoryTab_sc,
   },
-  {initialRouteName: 'Product', headerMode: 'none'},
+  {initialRouteName: 'SignUp', headerMode: 'none'},
 );
 
 export default createAppContainer(App);

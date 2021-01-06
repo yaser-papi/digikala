@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import OfferPage from '../component/offer_page/OfferPage';
 import My_Header from '../component/header_page/header';
+import OfferPage from '../component/offer_page/OfferPage';
 let props = {
   head_name: 'Main',
   head_page_name: 'off',

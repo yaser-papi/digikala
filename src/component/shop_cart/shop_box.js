@@ -42,9 +42,9 @@ const Shop_box = () => {
                 <Text>فروشنده:</Text>
               </View>
               <View style={styles.box_num}>
-                <Pc style={{height: 30, width: 50}} mode="dropdown">
+                {/* <Pc style={{height: 30, width: 50}} mode="dropdown">
                   <Pc.Item label={item.number} value={item.number} />
-                </Pc>
+                </Pc> */}
                 <Text>تعداد:</Text>
               </View>
             </View>
