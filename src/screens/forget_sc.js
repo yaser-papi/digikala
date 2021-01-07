@@ -5,8 +5,8 @@ import Forget from '../component/forget_page/forget';
 
 let props = {
   head_name: 'Forget',
+  head_page_name: '  تایید شماره تلفن  ',
 };
-
 const Forget_sc = () => {
   return (
     <View>

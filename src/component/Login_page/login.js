@@ -46,7 +46,6 @@ const Login = () => {
         />
         <Icon name="email" color="#999" size={20} />
       </TouchableOpacity>
-
       <TouchableOpacity
         style={[
           styles.box_in,
@@ -87,7 +86,6 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     width: w,
-    height: h,
     alignItems: 'center',
     padding: 20,
   },

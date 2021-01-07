@@ -13,14 +13,17 @@ import {
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TextInput} from 'react-native-gesture-handler';
+import {useNavigation} from 'react-navigation-hooks';
 
 const My_Header = (props) => {
+  const {navigate} = useNavigation();
+
   const main_header = () => {
     return (
       <Header style={{backgroundColor: '#ef394e'}}>
         <Left>
           <View style={{flexDirection: 'row'}}>
-            <Ripple>
+            <Ripple onPress={() => navigate('Shop_cart')}>
               <Icon name="shopping-cart" size={22} color="#fff" />
             </Ripple>
             <Ripple>
@@ -72,15 +75,19 @@ const My_Header = (props) => {
   };
   const Forget_header = () => {
     return (
-      <Header style={{backgroundColor: '#ef394e'}}>
+      <Header hasTabs style={{backgroundColor: '#ef394e'}}>
         <Right>
-          <Text style={{color: '#ddd', fontSize: 20}}> تایید شماره تلفن </Text>
+          <Text style={{color: '#ddd', fontSize: 20}}>
+            {props.head_page_name ? props.head_page_name : 'ورود'}
+          </Text>
 
           <Ripple>
             <Icon
               name={props.head_page_icon ? props.head_page_icon : 'close'}
               size={20}
-              color="#fff"
+              color={
+                props.head_page_icon_color ? props.head_page_icon_color : '#fff'
+              }
             />
           </Ripple>
         </Right>

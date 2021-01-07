@@ -1,20 +1,25 @@
 import React from 'react';
-import {View} from 'react-native';
 import My_Header from '../component/header_page/header';
 import Signup from '../component/signup_page/login';
+import My_Footer from '../component/footer/Footer';
+import {Container, Content} from 'native-base';
+
 let props = {
-  head_name: 'Main',
-  head_page_name: '  ثبت نام  ',
-  head_page_icon: 'close',
+  head_name: 'Forget',
+  head_page_name: ' ثبت نام  ',
   head_page_icon_color: '#555',
+  color: '#66bb6e',
 };
 
 const SignUp = () => {
   return (
-    <View>
+    <Container>
       <My_Header {...props} />
-      <Signup />
-    </View>
+      <Content>
+        <Signup />
+      </Content>
+      <My_Footer {...props} />
+    </Container>
   );
 };
 
