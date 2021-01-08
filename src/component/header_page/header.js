@@ -1,22 +1,13 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {
-  Container,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Title,
-  View,
-} from 'native-base';
+import {Header, Left, Right, View} from 'native-base';
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TextInput} from 'react-native-gesture-handler';
 import {useNavigation} from 'react-navigation-hooks';
 
 const My_Header = (props) => {
-  const {navigate} = useNavigation();
+  const {navigate, goBack} = useNavigation();
 
   const main_header = () => {
     return (
@@ -26,7 +17,7 @@ const My_Header = (props) => {
             <Ripple onPress={() => navigate('Shop_cart')}>
               <Icon name="shopping-cart" size={22} color="#fff" />
             </Ripple>
-            <Ripple>
+            <Ripple onPress={() => navigate('Search_sc')}>
               <Icon name="search" size={22} color="#fff" />
             </Ripple>
           </View>
@@ -62,12 +53,8 @@ const My_Header = (props) => {
         <Right>
           <Text style={{color: '#ddd', fontSize: 20}}> سبد خرید شما </Text>
 
-          <Ripple>
-            <Icon
-              name={props.head_page_icon ? props.head_page_icon : 'close'}
-              size={20}
-              color="#555"
-            />
+          <Ripple onPress={() => goBack(null)}>
+            <Icon name="close" size={20} color="#555" />
           </Ripple>
         </Right>
       </Header>
@@ -81,7 +68,7 @@ const My_Header = (props) => {
             {props.head_page_name ? props.head_page_name : 'ورود'}
           </Text>
 
-          <Ripple>
+          <Ripple onPress={() => goBack(null)}>
             <Icon
               name={props.head_page_icon ? props.head_page_icon : 'close'}
               size={20}
@@ -110,7 +97,7 @@ const My_Header = (props) => {
         <Right>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <TextInput placeholder="جستجو در دیجی کالا..." />
-            <Ripple>
+            <Ripple onPress={() => goBack(null)}>
               <Icon name="arrow-forward" size={22} color="#555" />
             </Ripple>
           </View>
