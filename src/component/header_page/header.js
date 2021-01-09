@@ -27,7 +27,10 @@ const My_Header = (props) => {
             {props.head_page_name ? props.head_page_name : 'digikala'}
           </Text>
 
-          <Ripple>
+          <Ripple
+            onPress={() => {
+              props.head_page_icon ? goBack(null) : null;
+            }}>
             <Icon
               name={props.head_page_icon ? props.head_page_icon : 'menu'}
               size={22}

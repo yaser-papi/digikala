@@ -9,10 +9,13 @@ import {
 } from 'react-native';
 import {cat_kala3} from '../../data/dataArray';
 import Ripple from 'react-native-material-ripple';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 
 const KalaThree = () => {
+  const {navigate} = useNavigation();
+
   return (
     <View>
       <View style={styles.head_view}>
@@ -23,7 +26,7 @@ const KalaThree = () => {
         horizontal={true}
         data={cat_kala3}
         renderItem={({item, index}) => (
-          <Ripple style={styles.kala}>
+          <Ripple style={styles.kala} onPress={() => navigate('Product')}>
             <Image
               style={styles.img_kala}
               source={{

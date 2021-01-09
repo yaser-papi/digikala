@@ -8,11 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 const Login = () => {
+  const {navigate} = useNavigation();
   const [border_user, setBorder_user] = useState(false);
   const [border_pass, setBorder_pass] = useState(false);
   const [show_pass, setShow_pass] = useState(true);
@@ -76,8 +78,12 @@ const Login = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.box_end}>
-        <Text>کلمه عبور خود را فراموش کرده ام!</Text>
-        <Text style={styles.txt_up}>ثبت نام در دیجی کالا</Text>
+        <Text onPress={() => navigate('Forget_sc')}>
+          کلمه عبور خود را فراموش کرده ام!
+        </Text>
+        <Text style={styles.txt_up} onPress={() => navigate('SignUp')}>
+          ثبت نام در دیجی کالا
+        </Text>
       </View>
     </View>
   );

@@ -8,10 +8,14 @@ import {
   Dimensions,
 } from 'react-native';
 import {kala_list2} from '../../data/dataArray';
+import {useNavigation} from 'react-navigation-hooks';
+import Ripple from 'react-native-material-ripple';
 
 const w = Dimensions.get('window').width;
 
 const KalaTwo = () => {
+  const {navigate} = useNavigation();
+
   return (
     <View>
       <View style={styles.head_view}>
@@ -23,7 +27,7 @@ const KalaTwo = () => {
         horizontal={true}
         data={kala_list2}
         renderItem={({item, index}) => (
-          <View style={styles.kala}>
+          <Ripple style={styles.kala} onPress={() => navigate('Product')}>
             <Image
               style={styles.img_kala}
               source={{
@@ -39,7 +43,7 @@ const KalaTwo = () => {
             <View style={styles.view_prc}>
               <Text style={styles.prc_kala}>{item.price}تومان</Text>
             </View>
-          </View>
+          </Ripple>
         )}
       />
     </View>

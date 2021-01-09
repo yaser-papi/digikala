@@ -9,10 +9,14 @@ import {
 } from 'react-native';
 import {kala_list1} from '../../data/dataArray';
 import CountDown from 'react-native-countdown-component';
+import Ripple from 'react-native-material-ripple';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 
 const Amazing = () => {
+  const {navigate} = useNavigation();
+
   return (
     <View>
       <View style={styles.head_view}>
@@ -41,7 +45,7 @@ const Amazing = () => {
         horizontal={true}
         data={kala_list1}
         renderItem={({item, index}) => (
-          <View style={styles.kala}>
+          <Ripple onPress={() => navigate('Product')} style={styles.kala}>
             <Image
               style={styles.img_kala}
               source={{
@@ -57,7 +61,7 @@ const Amazing = () => {
             <View style={styles.view_prc}>
               <Text style={styles.prc_kala}>{item.price}تومان</Text>
             </View>
-          </View>
+          </Ripple>
         )}
       />
     </View>

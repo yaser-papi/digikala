@@ -6,6 +6,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -13,6 +14,7 @@ const h = Dimensions.get('window').height;
 const CELL_COUNT = 5;
 
 const Forget = () => {
+  const {navigate} = useNavigation();
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -33,6 +35,12 @@ const Forget = () => {
     <View style={StyleSheet.container}>
       <View style={styles.parent}>
         <Text>کد به شماره 09123456789 ارسال می شود آن را وارد کنید</Text>
+        <Text
+          style={{color: 'green', marginTop: 40}}
+          onPress={() => navigate('Login_sc')}>
+          {' '}
+          ویرایش شماره تماس
+        </Text>
       </View>
 
       <CodeField

@@ -12,11 +12,13 @@ import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Picon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {kala_list1} from '../../data/dataArray';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 const Search = () => {
+  const {navigate} = useNavigation();
   const [view, setView] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [redio, setRedio] = useState(1);
@@ -133,7 +135,11 @@ const Search = () => {
   };
   const _full = (props) => {
     return (
-      <View style={f_styles.contain}>
+      <Ripple
+        style={f_styles.contain}
+        onPress={() => {
+          navigate('Product');
+        }}>
         <View style={f_styles.box_img}>
           <Image
             style={f_styles.img}
@@ -152,12 +158,16 @@ const Search = () => {
             <Text style={f_styles.pish}>پیشنهاد ویژه</Text>
           </View>
         </View>
-      </View>
+      </Ripple>
     );
   };
   const _half = (props) => {
     return (
-      <View style={[f_styles.contain, {flexDirection: 'row', height: h / 4}]}>
+      <Ripple
+        style={[f_styles.contain, {flexDirection: 'row', height: h / 4}]}
+        onPress={() => {
+          navigate('Product');
+        }}>
         <View style={{height: '30%', width: '60%'}}>
           <Text>{props.data.name}</Text>
           <View style={f_styles.box_name_price}>
@@ -177,16 +187,19 @@ const Search = () => {
             resizeMode="contain"
           />
         </View>
-      </View>
+      </Ripple>
     );
   };
   const _duble = (props) => {
     return (
-      <View
+      <Ripple
         style={[
           f_styles.contain,
           {width: w / 2.2, height: h / 3.2, alignSelf: 'flex-start'},
-        ]}>
+        ]}
+        onPress={() => {
+          navigate('Product');
+        }}>
         <View style={f_styles.box_img}>
           <Image
             style={f_styles.img}
@@ -206,7 +219,7 @@ const Search = () => {
             <Text style={f_styles.pish}>پیشنهاد ویژه</Text>
           </View>
         </View>
-      </View>
+      </Ripple>
     );
   };
 

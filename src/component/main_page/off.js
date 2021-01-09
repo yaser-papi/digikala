@@ -1,20 +1,16 @@
 import React from 'react';
 import {Image, StyleSheet, Dimensions} from 'react-native';
 import Ripple from 'react-native-material-ripple';
-// import {withNavigation} from 'react-navigation';
 import {off_list} from '../../data/dataArray';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 
-const Off = (props) => {
-  // console.log('props', props);
+const Off = () => {
+  const {navigate} = useNavigation();
+
   return (
-    <Ripple
-      style={styles.btn}
-      // onPress={() => {
-      //   props.navigation.navigate('Category', {name: 'yaser'});
-      // }}
-    >
+    <Ripple style={styles.btn} onPress={() => navigate('Off')}>
       {off_list.map((item, index) => (
         <Image style={styles.img} source={{uri: item.img}} key={index} />
       ))}
@@ -35,7 +31,5 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 });
-
-// const off = withNavigation(Off);
 
 export default React.memo(Off);
