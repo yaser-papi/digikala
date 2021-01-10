@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/Fontisto';
 import Iconss from 'react-native-vector-icons/FontAwesome';
 import Ripple from 'react-native-material-ripple';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 
@@ -26,6 +27,7 @@ const colors = [
 ];
 
 const Warranty = () => {
+  const {navigate} = useNavigation();
   // const [border_color, set_border_color] = useState('');
   const [index, setIndex] = useState(0);
 
@@ -129,7 +131,7 @@ const Warranty = () => {
       {/* ----------box price & buy----------------------------- */}
       <View style={styles.price_buy}>
         <Text style={styles.txt_price}>2500000</Text>
-        <Ripple style={styles.btn_buy}>
+        <Ripple style={styles.btn_buy} onPress={() => navigate('Shop_cart')}>
           <Text style={styles.btn_txt}>افزودن به سبد خرید</Text>
           <Iconss name="truck" size={20} color="#888" />
         </Ripple>

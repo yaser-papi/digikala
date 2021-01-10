@@ -9,17 +9,21 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {cat_kala1} from '../../data/dataArray';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 const CategoryTab = () => {
+  const {navigate} = useNavigation();
   return (
     <View style={{flex: 1}}>
       <FlatList
         data={cat_kala1}
         renderItem={({item, key}) => (
-          <TouchableOpacity style={styles.container}>
+          <TouchableOpacity
+            style={styles.container}
+            onPress={() => navigate('Product')}>
             <Image
               style={styles.img}
               source={{uri: item.image}}
