@@ -1,5 +1,6 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import Main from './src/screens/main';
 import Category from './src/screens/category';
 import Off from './src/screens/off';
@@ -11,7 +12,7 @@ import Forget_sc from './src/screens/forget_sc';
 import Search_sc from './src/screens/search_sc';
 import CategoryTab_sc from './src/screens/categoryTab_sc';
 
-const App = createStackNavigator(
+const Stack = createStackNavigator(
   {
     Main: Main,
     Category: Category,
@@ -27,4 +28,8 @@ const App = createStackNavigator(
   {initialRouteName: 'Main', headerMode: 'none'},
 );
 
-export default createAppContainer(App);
+const Drawer = createDrawerNavigator({
+  Stack: Stack,
+});
+
+export default createAppContainer(Drawer);

@@ -7,7 +7,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import {useNavigation} from 'react-navigation-hooks';
 
 const My_Header = (props) => {
-  const {navigate, goBack} = useNavigation();
+  const {navigate, goBack, toggleDrawer} = useNavigation();
 
   const main_header = () => {
     return (
@@ -29,7 +29,7 @@ const My_Header = (props) => {
 
           <Ripple
             onPress={() => {
-              props.head_page_icon ? goBack(null) : null;
+              props.head_page_icon ? goBack(null) : toggleDrawer();
             }}>
             <Icon
               name={props.head_page_icon ? props.head_page_icon : 'menu'}
