@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, StatusBar} from 'react-native';
 import {Header, Left, Right, View} from 'native-base';
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -11,36 +11,42 @@ const My_Header = (props) => {
 
   const main_header = () => {
     return (
-      <Header style={{backgroundColor: '#ef394e'}}>
-        <Left>
-          <View style={{flexDirection: 'row'}}>
-            <Ripple onPress={() => navigate('Shop_cart')}>
-              <Icon name="shopping-cart" size={22} color="#fff" />
-            </Ripple>
-            <Ripple onPress={() => navigate('Search_sc')}>
-              <Icon name="search" size={22} color="#fff" />
-            </Ripple>
-          </View>
-        </Left>
-        <Right>
-          <Text style={{color: '#fff', fontSize: 22, fontWeight: 'bold'}}>
-            {props.head_page_name ? props.head_page_name : 'digikala'}
-          </Text>
+      <>
+        <Header
+          style={{backgroundColor: '#ef394e'}}
+          androidStatusBarColor={'#ef394e'}>
+          <Left>
+            <View style={{flexDirection: 'row'}}>
+              <Ripple onPress={() => navigate('Shop_cart')}>
+                <Icon name="shopping-cart" size={22} color="#fff" />
+              </Ripple>
+              <Ripple onPress={() => navigate('Search_sc')}>
+                <Icon name="search" size={22} color="#fff" />
+              </Ripple>
+            </View>
+          </Left>
+          <Right>
+            <Text style={{color: '#fff', fontSize: 22, fontWeight: 'bold'}}>
+              {props.head_page_name ? props.head_page_name : 'digikala'}
+            </Text>
 
-          <Ripple
-            onPress={() => {
-              props.head_page_icon ? goBack(null) : toggleDrawer();
-            }}>
-            <Icon
-              name={props.head_page_icon ? props.head_page_icon : 'menu'}
-              size={22}
-              color={
-                props.head_page_icon_color ? props.head_page_icon_color : '#fff'
-              }
-            />
-          </Ripple>
-        </Right>
-      </Header>
+            <Ripple
+              onPress={() => {
+                props.head_page_icon ? goBack(null) : toggleDrawer();
+              }}>
+              <Icon
+                name={props.head_page_icon ? props.head_page_icon : 'menu'}
+                size={22}
+                color={
+                  props.head_page_icon_color
+                    ? props.head_page_icon_color
+                    : '#fff'
+                }
+              />
+            </Ripple>
+          </Right>
+        </Header>
+      </>
     );
   };
   const Shop_cart_header = () => {
