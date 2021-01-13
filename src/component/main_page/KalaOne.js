@@ -22,6 +22,7 @@ const KalaOne = () => {
         <Text style={styles.head_text_r}>محصولات پر فروش</Text>
       </View>
       <FlatList
+        inverted={true}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
         data={kala_list1}

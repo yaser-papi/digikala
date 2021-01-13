@@ -1,7 +1,7 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createDrawerNavigator} from 'react-navigation-drawer';
-import sideMenu from './src/component/drawer/sideMenu';
+import SideMenu from './src/component/drawer/sideMenu';
 import Main from './src/screens/main';
 import Category from './src/screens/category';
 import Off from './src/screens/off';
@@ -36,7 +36,7 @@ const Drawer = createDrawerNavigator(
   {
     drawerPosition: 'right',
     drawerWidth: '60%',
-    contentComponent: sideMenu,
+    contentComponent: SideMenu,
   },
 );
 

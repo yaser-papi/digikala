@@ -41,6 +41,7 @@ const Amazing = () => {
         </Text>
       </View>
       <FlatList
+        inverted={true}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
         data={kala_list1}
