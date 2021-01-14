@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     fontSize: 14,
+    fontFamily: 'BTitrBold',
   },
 });
 
