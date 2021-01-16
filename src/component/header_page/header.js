@@ -51,7 +51,9 @@ const My_Header = (props) => {
   };
   const Shop_cart_header = () => {
     return (
-      <Header style={{backgroundColor: '#ef394e'}}>
+      <Header
+        style={{backgroundColor: '#ef394e'}}
+        androidStatusBarColor={'#ef394e'}>
         <Left>
           <View style={{flexDirection: 'row'}}>
             <Ripple>
@@ -71,7 +73,10 @@ const My_Header = (props) => {
   };
   const Forget_header = () => {
     return (
-      <Header hasTabs style={{backgroundColor: '#ef394e'}}>
+      <Header
+        hasTabs
+        style={{backgroundColor: '#ef394e'}}
+        androidStatusBarColor={'#ef394e'}>
         <Right>
           <Text style={{color: '#ddd', fontSize: 20}}>
             {props.head_page_name ? props.head_page_name : 'ورود'}
@@ -92,7 +97,9 @@ const My_Header = (props) => {
   };
   const Search_header = () => {
     return (
-      <Header style={{backgroundColor: '#fff'}}>
+      <Header
+        style={{backgroundColor: '#fff'}}
+        androidStatusBarColor={'#ef394e'}>
         <Left>
           <View style={{flexDirection: 'row'}}>
             <Ripple>

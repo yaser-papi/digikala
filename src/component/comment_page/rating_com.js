@@ -25,11 +25,11 @@ let animate = {
 
 const Rating = () => {
   const [chang_height, set_chang_height] = useState(true);
-  const [chang_btn_txt, set_chang_btn_txt] = useState('ادامه مطلب');
+  const [chang_btn_txt, set_chang_btn_txt] = useState('جزییات');
   const _changText = () => {
     LayoutAnimation.configureNext(animate);
     set_chang_height(!chang_height);
-    chang_height ? set_chang_btn_txt('بستن') : set_chang_btn_txt('ادامه مطلب');
+    chang_height ? set_chang_btn_txt('بستن') : set_chang_btn_txt('جزییات');
   };
   const Rat2 = () => {
     return (
@@ -94,6 +94,8 @@ const styles = StyleSheet.create({
 
   btn_txt: {
     alignSelf: 'center',
+    fontSize: 10,
+    color: '#3498DB',
   },
 });
 
