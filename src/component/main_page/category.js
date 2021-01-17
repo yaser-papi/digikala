@@ -2,7 +2,6 @@ import React from 'react';
 import {ScrollView, TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {category_list} from '../../data/dataArray';
 import {useNavigation} from 'react-navigation-hooks';
-import {Right} from 'native-base';
 
 const Category = () => {
   const {navigate} = useNavigation();

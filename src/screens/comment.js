@@ -5,6 +5,7 @@ import Rating from '../component/comment_page/rating_com';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ripple from 'react-native-material-ripple';
 import People_comment from '../component/comment_page/people_comment';
+import {useNavigation} from 'react-navigation-hooks';
 
 const w = Dimensions.get('window').width;
 
@@ -14,6 +15,7 @@ let props = {
 };
 
 const Comment = () => {
+  const {navigate} = useNavigation();
   const [filter, setFilter] = useState('جدیدترین نظرات');
   const Comments_btn = () => {
     if (filter === 'جدیدترین نظرات') {
@@ -52,7 +54,10 @@ const Comment = () => {
           <People_comment />
         </View>
       </ScrollView>
-      <Ripple style={styles.pen} rippleContainerBorderRadius={30}>
+      <Ripple
+        style={styles.pen}
+        rippleContainerBorderRadius={30}
+        onPress={() => navigate('Add_comment')}>
         <Icon name="pencil" color="#fff" size={22} />
       </Ripple>
     </View>
