@@ -33,8 +33,8 @@ const Rating = () => {
   };
   const Rat2 = () => {
     return (
-      <View style={styles.rat2}>
-        <View style={styles.s1}>
+      <View>
+        <View>
           <Stars
             half={true}
             default={2.5}

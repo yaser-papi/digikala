@@ -23,8 +23,8 @@ const Rating = () => {
           <Text style={{color: '#000'}}> 4.3 از 5</Text>
         </Text>
       </View>
-      <View style={styles.rat2}>
-        <View style={styles.s1}>
+      <View>
+        <View>
           <Stars
             half={true}
             default={2.5}
