@@ -46,7 +46,9 @@ const Amazing = () => {
         horizontal={true}
         data={kala_list1}
         renderItem={({item, index}) => (
-          <Ripple onPress={() => navigate('Product')} style={styles.kala}>
+          <Ripple
+            onPress={() => navigate('Product', {header_name: item.name})}
+            style={styles.kala}>
             <Image
               style={styles.img_kala}
               source={{

@@ -14,8 +14,7 @@ const Category = () => {
       {category_list.map((item, key) => (
         <TouchableOpacity
           style={styles.touch}
-          key={key}
-          onPress={() => navigate('CategoryTab_sc')}>
+          onPress={() => navigate('CategoryTab_sc', {num_tab: key})}>
           <Text style={styles.text}>{item.touch}</Text>
         </TouchableOpacity>
       ))}

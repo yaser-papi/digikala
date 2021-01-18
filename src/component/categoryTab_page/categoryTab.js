@@ -20,10 +20,10 @@ const CategoryTab = () => {
     <View style={{flex: 1}}>
       <FlatList
         data={cat_kala1}
-        renderItem={({item, key}) => (
+        renderItem={({item}) => (
           <TouchableOpacity
             style={styles.container}
-            onPress={() => navigate('Product')}>
+            onPress={() => navigate('Category', {header_name: item.name})}>
             <Image
               style={styles.img}
               source={{uri: item.image}}

@@ -1,8 +1,9 @@
 import React from 'react';
 import My_Header from '../component/header_page/header';
-import {Container, Header, Tab, Tabs, ScrollableTab} from 'native-base';
+import {Container, Tab, Tabs, ScrollableTab} from 'native-base';
 import CategoryTab from '../component/categoryTab_page/categoryTab';
 import {category_list} from '../data/dataArray';
+import {useNavigation} from 'react-navigation-hooks';
 
 let props = {
   head_name: 'Forget',
@@ -11,12 +12,15 @@ let props = {
 };
 
 const CategoryTab_sc = () => {
+  const {getParam} = useNavigation();
   return (
     <>
       <My_Header {...props} />
       <Container>
-        <Tabs renderTabBar={() => <ScrollableTab />}>
-          {category_list.map((item, key) => (
+        <Tabs
+          initialPage={getParam('num_tab')}
+          renderTabBar={() => <ScrollableTab />}>
+          {category_list.map((item) => (
             <Tab
               heading={item.touch}
               tabStyle={{backgroundColor: '#ef394e'}}

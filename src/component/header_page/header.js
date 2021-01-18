@@ -27,7 +27,7 @@ const My_Header = (props) => {
           </Left>
           <Right>
             <Text style={{color: '#fff', fontSize: 22, fontWeight: 'bold'}}>
-              {props.head_page_name ? props.head_page_name : 'digikala'}
+              {props.head_page_name ? props.head_page_name : 'Digikala  '}
             </Text>
 
             <Ripple

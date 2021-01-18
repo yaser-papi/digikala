@@ -26,7 +26,9 @@ const KalaOne = () => {
         horizontal={true}
         data={cat_kala1}
         renderItem={({item, index}) => (
-          <Ripple style={styles.kala} onPress={() => navigate('Product')}>
+          <Ripple
+            style={styles.kala}
+            onPress={() => navigate('Product', {header_name: item.name})}>
             <Image
               style={styles.img_kala}
               source={{

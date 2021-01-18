@@ -13,6 +13,7 @@ import Forget_sc from './src/screens/forget_sc';
 import Search_sc from './src/screens/search_sc';
 import CategoryTab_sc from './src/screens/categoryTab_sc';
 import Comment from './src/screens/comment';
+import Add_comment from './src/screens/add_comment';
 
 const Stack = createStackNavigator(
   {
@@ -27,8 +28,9 @@ const Stack = createStackNavigator(
     Search_sc: Search_sc,
     CategoryTab_sc: CategoryTab_sc,
     Comment: Comment,
+    Add_comment: Add_comment,
   },
-  {initialRouteName: 'Comment', headerMode: 'none'},
+  {initialRouteName: 'Main', headerMode: 'none'},
 );
 
 const Drawer = createDrawerNavigator(

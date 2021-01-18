@@ -10,13 +10,14 @@ import Rating from '../component/product_page/rating';
 import Category from '../component/product_page/category';
 import Por_simi from '../component/product_page/por_simi';
 import Por_others_buy from '../component/product_page/por_others_buy';
-
-let props = {
-  head_name: 'Main',
-  head_page_name: ' نام محصول ...',
-};
+import {useNavigation} from 'react-navigation-hooks';
 
 const Product = () => {
+  const {getParam} = useNavigation();
+  let props = {
+    head_name: 'Main',
+    head_page_name: getParam('header_name'),
+  };
   return (
     <ScrollView style={{backgroundColor: '#eee'}}>
       <My_Header {...props} />
