@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-picker/picker": "^1.9.8",
+    "axios": "^0.21.1",
     "native-base": "^2.15.0",
     "react": "16.13.1",
     "react-native": "0.63.4",
