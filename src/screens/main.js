@@ -24,7 +24,7 @@ const Main = () => {
   });
   const buttonHandler = async () => {
     axios
-      .get('https://jsonplaceholder.ir/posts')
+      .get('https://jsonplaceholder.ir/posts/100')
       .then((response) => console.log('response.data', response.data))
       .catch(error)(console.log('error', error));
   };
