@@ -39,6 +39,22 @@ const Main = () => {
     //   })
     //   .catch((error) => console.log('error', error));
   });
+<<<<<<< HEAD
+=======
+  const buttonHandler = async () => {
+    axios
+      .get('https://jsonplaceholder.ir/posts/100')
+      .then((response) => console.log('response.data', response.data))
+      .catch(error)(console.log('error', error));
+  };
+  // axios}
+
+  //   .get('https://jsonplaceholder.ir/posts/50')
+  //   .then((response) => {
+  //     console.log('response.data', response.data);
+  //   })
+  //   .catch((error) => console.log('error', error));
+>>>>>>> d1010ed0681449f49374fdec05988eafad2a8327
 
   return (
     <ScrollView>
